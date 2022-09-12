@@ -34,7 +34,7 @@ jobs:
       gitrunner_vm_id: ${{ steps.runner-label.outputs.vm_id }}
     steps:
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@sigstore
+        uses: aws-actions/configure-aws-credentials@master,sigstore
         with:
           role-to-assume: arn:aws:iam::103452865492:role/ecsInstanceRole
           aws-region: us-east-1
