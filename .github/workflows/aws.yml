@@ -62,7 +62,7 @@ jobs:
           {"name": "GITHUB_PAT", "value": "${{ secrets.RUNNER_PAT }}"}
           ]}]}'
           ${{ steps.task-config.outputs.NET_CONFIG }}
-  build-code:
+  build-code: 
     needs: [activate-github-runner]
     runs-on: [self-hosted, "${{ needs.activate-github-runner.outputs.gitrunner_vm_id }}"]
     permissions:
