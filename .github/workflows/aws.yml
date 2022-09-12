@@ -33,11 +33,12 @@ jobs:
     outputs:
       gitrunner_vm_id: ${{ steps.runner-label.outputs.vm_id }}
     steps:
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@master
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: ${{ secrets.ROLE_TO_ASSUME }}
-          aws-region: ${{ secrets.AWS_REGION }}
+          role-to-assume: arn:aws:iam::123456789100:role/my-github-actions-role
+          aws-region: us-east-1
+          
       - name: Check identity
         id: validate
         run: |
